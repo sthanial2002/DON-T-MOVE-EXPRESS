@@ -1,0 +1,166 @@
+{
+  "project_info": {
+    "project_number": "762493774615",
+    "project_id": "dontmove-225",
+    "storage_bucket": "dontmove-225.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:762493774615:android:f39aff2607c286d51e6552",
+        "android_client_info": {
+          "package_name": "com.dontmove225.customer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "762493774615-f38orhb2be4hnpiagkg8tigqc8akss9j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dontmove225.customer",
+            "certificate_hash": "5b37a485280e68659dafcb734b8a70abfb9658d4"
+          }
+        },
+        {
+          "client_id": "762493774615-q64dspiuqp365bgh7p78f3mtnn4bnubt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dontmove225.customer",
+            "certificate_hash": "00a04db02a41c34ea60f0088c685f7462d03ae0a"
+          }
+        },
+        {
+          "client_id": "762493774615-43vqbn9ccaufp2q5ghp6d73i3le1siv7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAry80WuPtOxSoGrMuOcj_eVMyWTK9yNrI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "762493774615-43vqbn9ccaufp2q5ghp6d73i3le1siv7.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "762493774615-4ofa49utmnq9fdoo4ao2enuhbl2jut3u.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.dontmove.ci.driver"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:762493774615:android:9a045c702196bd7e1e6552",
+        "android_client_info": {
+          "package_name": "com.dontmove225.deliveryboy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "762493774615-s8lmiltbniunh7s61ihv61mc5rkoomg3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dontmove225.deliveryboy",
+            "certificate_hash": "5b37a485280e68659dafcb734b8a70abfb9658d4"
+          }
+        },
+        {
+          "client_id": "762493774615-uckhkkng9j3164160e1o1tjdpf6is12b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dontmove225.deliveryboy",
+            "certificate_hash": "00a04db02a41c34ea60f0088c685f7462d03ae0a"
+          }
+        },
+        {
+          "client_id": "762493774615-43vqbn9ccaufp2q5ghp6d73i3le1siv7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAry80WuPtOxSoGrMuOcj_eVMyWTK9yNrI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "762493774615-43vqbn9ccaufp2q5ghp6d73i3le1siv7.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "762493774615-4ofa49utmnq9fdoo4ao2enuhbl2jut3u.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.dontmove.ci.driver"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:762493774615:android:5f9c012d21a8d9301e6552",
+        "android_client_info": {
+          "package_name": "com.dontmove225.vendor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "762493774615-5gmupjvllmk1t1a6ulc6adimnas8pu6m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dontmove225.vendor",
+            "certificate_hash": "00a04db02a41c34ea60f0088c685f7462d03ae0a"
+          }
+        },
+        {
+          "client_id": "762493774615-8gmvfmmc8mt3h6nfgjf1aon516sofr3n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dontmove225.vendor",
+            "certificate_hash": "5b37a485280e68659dafcb734b8a70abfb9658d4"
+          }
+        },
+        {
+          "client_id": "762493774615-43vqbn9ccaufp2q5ghp6d73i3le1siv7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAry80WuPtOxSoGrMuOcj_eVMyWTK9yNrI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "762493774615-43vqbn9ccaufp2q5ghp6d73i3le1siv7.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "762493774615-4ofa49utmnq9fdoo4ao2enuhbl2jut3u.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.dontmove.ci.driver"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

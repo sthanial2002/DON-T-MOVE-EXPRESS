@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>762493774615-ogkulvpeq535gm469m102qsf0c0cv4r7.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.762493774615-ogkulvpeq535gm469m102qsf0c0cv4r7</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>762493774615-0t6n3cvbg1n05ulq2apdqgrbigm3vj61.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBp8-Q-oNkDtV7ZRTamxX6sBHB1mCOqvhA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>762493774615</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.dontmove225.customer</string>
+	<key>PROJECT_ID</key>
+	<string>dontmove-225</string>
+	<key>STORAGE_BUCKET</key>
+	<string>dontmove-225.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:762493774615:ios:7c100ced53fb25cf1e6552</string>
+</dict>
+</plist>
