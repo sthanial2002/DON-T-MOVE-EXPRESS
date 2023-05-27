@@ -35,6 +35,7 @@ void main() async {
         languagesList: AppLanguages.codes,
         assetsDirectory: 'assets/lang/',
       );
+      
 
       //
       await LocalStorageService.getPrefs();

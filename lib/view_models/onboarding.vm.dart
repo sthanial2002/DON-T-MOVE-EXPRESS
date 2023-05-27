@@ -59,7 +59,7 @@ class OnboardingViewModel extends MyBaseViewModel {
       ),
     ];
     //
-    loadOnboardingData();
+    //loadOnboardingData();
   }
 
   loadOnboardingData() async {
