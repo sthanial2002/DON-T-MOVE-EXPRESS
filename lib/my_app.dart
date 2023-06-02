@@ -2,11 +2,10 @@ import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:fuodz/constants/app_theme.dart';
 import 'package:fuodz/services/app.service.dart';
-import 'package:fuodz/views/pages/splash.page.dart';
+import 'package:fuodz/views/pages/splash2.page.dart';
 import 'package:localize_and_translate/localize_and_translate.dart';
 import 'constants/app_strings.dart';
 import 'package:fuodz/services/router.service.dart' as router;
-
 
 class MyApp extends StatelessWidget {
   const MyApp({Key key}) : super(key: key);
@@ -32,7 +31,7 @@ class MyApp extends StatelessWidget {
           localizationsDelegates: translator.delegates,
           locale: translator.activeLocale,
           supportedLocales: translator.locals(),
-          home: SplashPage(),
+          home: SplashPage2(),
           theme: theme,
           darkTheme: darkTheme,
         );

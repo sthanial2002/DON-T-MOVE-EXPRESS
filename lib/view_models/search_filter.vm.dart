@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:fuodz/models/search_data.dart';
 import 'package:fuodz/models/search.dart';
@@ -15,7 +17,9 @@ class SearchFilterViewModel extends MyBaseViewModel {
 
   SearchFilterViewModel(BuildContext context, this.search) {
     this.viewContext = context;
+    print(this.search);
     this.vendorType = this.search.vendorType;
+    log("search input===> ${search.vendorType}");
     //
     fetchSearchData();
   }

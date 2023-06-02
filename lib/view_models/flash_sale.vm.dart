@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:fuodz/models/flash_sale.dart';
 import 'package:fuodz/models/product.dart';
@@ -44,6 +46,7 @@ class FlashSaleViewModel extends MyBaseViewModel {
   fetchFlashSaleItems() async {
     for (var i = 0; i < flashSales.length; i++) {
       final flashSale = flashSales[i];
+      log("=-=-=-?/ ${flashSales}");
       setBusyForObject(flashSale.id, true);
       try {
         final flashSaleItems = await _flashSaleRequest.getProdcuts(

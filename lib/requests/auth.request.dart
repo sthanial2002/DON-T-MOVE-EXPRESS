@@ -5,8 +5,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:fuodz/constants/api.dart';
 import 'package:fuodz/models/api_response.dart';
 import 'package:fuodz/services/http.service.dart';
+import 'package:rx_shared_preferences/rx_shared_preferences.dart';
 
 class AuthRequest extends HttpService {
+  
+  
   //
   Future<ApiResponse> loginRequest({
     @required String email,
@@ -65,6 +68,7 @@ class AuthRequest extends HttpService {
     String code = "",
   }) async {
     final apiResult = await post(
+     
       Api.register,
       {
         "name": name,
@@ -74,8 +78,9 @@ class AuthRequest extends HttpService {
         "password": password,
         "code": code,
       },
+      
     );
-
+    
     return ApiResponse.fromResponse(apiResult);
   }
 

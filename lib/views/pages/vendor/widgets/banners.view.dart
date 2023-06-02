@@ -41,28 +41,31 @@ class Banners extends StatelessWidget {
                 visible: model.banners != null && model.banners.isNotEmpty,
                 child: VStack(
                   [
-                    CarouselSlider(
-                      options: CarouselOptions(
-                        viewportFraction: viewportFraction,
-                        autoPlay: true,
-                        initialPage: 1,
-                        height: (!model.isBusy && model.banners.length > 0)
-                            ? (AppStrings.bannerHeight ?? 150.0)
-                            : 0.00,
-                        disableCenter: true,
-                        onPageChanged: (index, reason) {
-                          model.currentIndex = index;
-                          model.notifyListeners();
-                        },
+                    Padding(
+                      padding: EdgeInsets.only(left: 10, right: 10),
+                      child: CarouselSlider(
+                        options: CarouselOptions(
+                          viewportFraction: 1,
+                          autoPlay: true,
+                          initialPage: 1,
+                          height: (!model.isBusy && model.banners.length > 0)
+                              ? (AppStrings.bannerHeight ?? 150.0)
+                              : 0.00,
+                          disableCenter: true,
+                          onPageChanged: (index, reason) {
+                            model.currentIndex = index;
+                            model.notifyListeners();
+                          },
+                        ),
+                        items: model.banners.map(
+                          (banner) {
+                            return BannerListItem(
+                              imageUrl: banner.imageUrl,
+                              onPressed: () => model.bannerSelected(banner),
+                            );
+                          },
+                        ).toList(),
                       ),
-                      items: model.banners.map(
-                        (banner) {
-                          return BannerListItem(
-                            imageUrl: banner.imageUrl,
-                            onPressed: () => model.bannerSelected(banner),
-                          );
-                        },
-                      ).toList(),
                     ),
                     //indicators
                     CustomVisibilty(

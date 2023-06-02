@@ -115,6 +115,9 @@ dependencies:
   url_launcher: ^6.1.4
   velocity_x: ^3.5.1
   what3words: ^3.1.0
+  lottie: 
+  persistent_bottom_nav_bar_v2: ^4.2.8
+  curved_nav_bar: ^0.0.2
 
 dependency_overrides:
   firebase_chat: ^0.0.6+1
@@ -125,6 +128,7 @@ dependency_overrides:
   plugin_platform_interface: ^2.1.1
   qr_flutter: ^4.0.0
   image_picker_android: 0.8.4+13
+  
 
 dev_dependencies:
   flutter_application_id: ^2.0.0-dev
@@ -151,3 +155,9 @@ flutter:
     - assets/json/
     - assets/lang/
     - assets/
+    - assets/ASSETS/
+  
+  fonts:
+    - family: zekton
+      fonts:
+        - asset: assets/zekton rg.ttf

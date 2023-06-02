@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:fuodz/models/flash_sale.dart';
 import 'package:fuodz/view_models/flash_sale.vm.dart';
@@ -7,7 +9,8 @@ import 'package:fuodz/widgets/custom_dynamic_grid_view.dart';
 import 'package:stacked/stacked.dart';
 
 class FlashSaleItemsPage extends StatelessWidget {
-  const FlashSaleItemsPage(this.flashSale, {Key key}) : super(key: key);
+  const FlashSaleItemsPage(FlashSale flashsale, {this.flashSale, Key key})
+      : super(key: key);
 
   final FlashSale flashSale;
 
@@ -35,6 +38,7 @@ class FlashSaleItemsPage extends StatelessWidget {
             itemCount: flashSale.items.length,
             itemBuilder: (ctx, index) {
               final flashSaleItem = flashSale.items[index];
+              log("lololoo ${flashSaleItem}");
               return FlashSaleItemListItem(
                 flashSaleItem,
                 fullPage: true,

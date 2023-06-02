@@ -282,6 +282,13 @@
             </list>
           </value>
         </entry>
+        <entry key="curved_nav_bar">
+          <value>
+            <list>
+              <option value="C:/src/flutter_windows_3.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/curved_nav_bar-0.0.2/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="custom_clippers">
           <value>
             <list>
@@ -1388,6 +1395,13 @@
             </list>
           </value>
         </entry>
+        <entry key="persistent_bottom_nav_bar_v2">
+          <value>
+            <list>
+              <option value="C:/src/flutter_windows_3.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/persistent_bottom_nav_bar_v2-4.2.8/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="petitparser">
           <value>
             <list>
@@ -2033,6 +2047,7 @@
       <root url="file://C:/src/flutter_windows_3.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/csslib-0.17.2/lib" />
       <root url="file://C:/src/flutter_windows_3.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/cupertino_icons-1.0.5/lib" />
       <root url="file://C:/src/flutter_windows_3.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/currency_formatter-1.2.1/lib" />
+      <root url="file://C:/src/flutter_windows_3.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/curved_nav_bar-0.0.2/lib" />
       <root url="file://C:/src/flutter_windows_3.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/custom_clippers-2.0.0/lib" />
       <root url="file://C:/src/flutter_windows_3.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/dart_style-2.1.1/lib" />
       <root url="file://C:/src/flutter_windows_3.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/dartx-1.1.0/lib" />
@@ -2187,6 +2202,7 @@
       <root url="file://C:/src/flutter_windows_3.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_platform_interface-2.0.4/lib" />
       <root url="file://C:/src/flutter_windows_3.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_windows-2.1.0/lib" />
       <root url="file://C:/src/flutter_windows_3.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/pedantic-1.11.1/lib" />
+      <root url="file://C:/src/flutter_windows_3.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/persistent_bottom_nav_bar_v2-4.2.8/lib" />
       <root url="file://C:/src/flutter_windows_3.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/petitparser-5.0.0/lib" />
       <root url="file://C:/src/flutter_windows_3.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/photo_manager-2.1.4/lib" />
       <root url="file://C:/src/flutter_windows_3.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/photo_view-0.13.0/lib" />

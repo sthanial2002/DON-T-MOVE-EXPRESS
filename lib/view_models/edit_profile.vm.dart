@@ -1,9 +1,13 @@
+import 'dart:developer';
 import 'dart:io';
 
 import 'package:cool_alert/cool_alert.dart';
 import 'package:country_picker/country_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:fuodz/constants/app_strings.dart';
+import 'package:fuodz/view_models/welcome.vm.dart';
+import 'package:fuodz/views/pages/home.page.dart';
+import 'package:fuodz/views/pages/profile/profile.page.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:fuodz/models/user.dart';
 import 'package:fuodz/requests/auth.request.dart';
@@ -11,6 +15,8 @@ import 'package:fuodz/services/auth.service.dart';
 import 'package:fuodz/view_models/base.view_model.dart';
 import 'package:localize_and_translate/localize_and_translate.dart';
 import 'package:velocity_x/velocity_x.dart';
+
+import '../services/local_storage.service.dart';
 
 class EditProfileViewModel extends MyBaseViewModel {
   User currentUser;
@@ -25,9 +31,11 @@ class EditProfileViewModel extends MyBaseViewModel {
   //
   AuthRequest _authRequest = AuthRequest();
   final picker = ImagePicker();
-
-  EditProfileViewModel(BuildContext context) {
+  WelcomeViewModel welcomeViewModel;
+  EditProfileViewModel(
+      BuildContext context, WelcomeViewModel welcomeViewModel) {
     this.viewContext = context;
+    this.welcomeViewModel = welcomeViewModel;
     try {
       this.selectedCountry = Country.parse(
         AuthServices.currentUser.countryCode ??
@@ -103,6 +111,9 @@ class EditProfileViewModel extends MyBaseViewModel {
       if (apiResponse.allGood) {
         //everything works well
         await AuthServices.saveUser(apiResponse.body["user"]);
+        await LocalStorageService.rxPrefs.write('editPR', true, (t) => t);
+        // log("chaning state in editpro");
+        await welcomeViewModel.changeCurrentUser();
       }
 
       //
@@ -113,12 +124,20 @@ class EditProfileViewModel extends MyBaseViewModel {
         text: apiResponse.message,
         onConfirmBtnTap: apiResponse.allGood
             ? () {
-                //
-                viewContext.pop();
-                viewContext.pop(true);
+                // AuthServices.getCurrentUser(force: true);
+                Navigator.pop(viewContext);
+                Navigator.pop(viewContext, true);
+
+                // Navigator.pushAndRemoveUntil(
+                //     viewContext,
+                //     MaterialPageRoute(
+                //       builder: (context) => HomePage(),
+                //     ),
+                //     (route) => false);
               }
             : null,
       );
     }
+    notifyListeners();
   }
 }

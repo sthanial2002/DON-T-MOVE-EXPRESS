@@ -238,4 +238,7 @@ class Product {
       return true;
     }
   }
+
+  @override
+  String toString() => toJson().toString();
 }

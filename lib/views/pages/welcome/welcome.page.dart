@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:fuodz/view_models/welcome.vm.dart';
 import 'package:fuodz/widgets/base.page.dart';
@@ -26,7 +28,8 @@ class _WelcomePageState extends State<WelcomePage>
         onModelReady: (vm) => vm.initialise(),
         disposeViewModel: false,
         builder: (context, vm, child) {
-          return EmptyWelcome(vm: vm);
+          log('message');
+          return EmptyWelcome(vm:vm);
         },
       ),
     );

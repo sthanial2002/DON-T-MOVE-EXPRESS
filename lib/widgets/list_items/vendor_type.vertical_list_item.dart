@@ -6,16 +6,20 @@ import 'package:fuodz/widgets/custom_image.view.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class VendorTypeVerticalListItem extends StatelessWidget {
-  const VendorTypeVerticalListItem(this.vendorType, {this.onPressed, Key key})
+  const VendorTypeVerticalListItem(this.vendorType,
+      {this.onPressed, Key key, this.index})
       : super(key: key);
 
   final VendorType vendorType;
+  final int index;
   final Function onPressed;
   @override
   Widget build(BuildContext context) {
     return AnimationConfiguration.staggeredList(
       position: vendorType.id,
-      duration: const Duration(milliseconds: 375),
+      duration: const Duration(
+        milliseconds: 375,
+      ),
       child: SlideAnimation(
         verticalOffset: 50.0,
         child: FadeInAnimation(

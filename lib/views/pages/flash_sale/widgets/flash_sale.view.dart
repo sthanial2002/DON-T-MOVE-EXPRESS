@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -65,6 +66,7 @@ class _FlashSaleViewState extends State<FlashSaleView> {
       if (flashsale.items == null ||
           flashsale.items.isEmpty ||
           flashsale.isExpired) {
+        log("flashsale000 ${flashsale}");
         list.add(UiSpacer.emptySpace());
         return;
       }
@@ -111,8 +113,10 @@ class _FlashSaleViewState extends State<FlashSaleView> {
               ),
             ],
           ).expand(),
+
           UiSpacer.hSpace(10),
           //
+
           "SEE ALL"
               .tr()
               .text
@@ -153,5 +157,6 @@ class _FlashSaleViewState extends State<FlashSaleView> {
 
   openFlashSaleItems(BuildContext context, FlashSale flashsale) {
     context.nextPage(FlashSaleItemsPage(flashsale));
+    log("flashsale000 ${flashsale}");
   }
 }

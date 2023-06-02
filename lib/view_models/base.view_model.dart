@@ -24,6 +24,7 @@ import 'package:fuodz/services/update.service.dart';
 import 'package:fuodz/view_models/payment.view_model.dart';
 import 'package:fuodz/views/pages/auth/login.page.dart';
 import 'package:fuodz/views/pages/cart/cart.page.dart';
+import 'package:fuodz/views/pages/notification/notifications.page.dart';
 import 'package:fuodz/views/pages/service/service_details.page.dart';
 import 'package:fuodz/views/pages/vendor/vendor_reviews.page.dart';
 import 'package:fuodz/views/shared/ops_map.page.dart';
@@ -250,6 +251,11 @@ class MyBaseViewModel extends BaseViewModel with UpdateService {
 
   openCart() async {
     viewContext.nextPage(CartPage());
+  }
+
+  openNotification() async {
+    viewContext.nextPage(NotificationsPage());
+    
   }
 
   //

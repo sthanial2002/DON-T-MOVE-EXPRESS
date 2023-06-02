@@ -27,6 +27,7 @@ import 'package:fuodz/services/location.service.dart';
 import 'package:fuodz/services/parcel_vendor.service.dart';
 import 'package:fuodz/services/validator.service.dart';
 import 'package:fuodz/view_models/payment.view_model.dart';
+import 'package:fuodz/views/pages/auth/login.page.dart';
 import 'package:fuodz/widgets/bottomsheets/parcel_location_picker_option.bottomsheet.dart';
 import 'package:google_maps_place_picker_mb/google_maps_place_picker.dart';
 import 'package:jiffy/jiffy.dart';
@@ -238,7 +239,7 @@ class NewParcelViewModel extends PaymentViewModel {
     //check that user is logged in to countinue else go to login page
     if (!AuthServices.authenticated()) {
       final result =
-          await viewContext.navigator.pushNamed(AppRoutes.loginRoute);
+          await Navigator.of(viewContext).push(MaterialPageRoute(builder: (context) => LoginPage(),));
       paymentOptionRequest = PaymentMethodRequest();
       if (result == null || !result) {
         return;
@@ -260,7 +261,7 @@ class NewParcelViewModel extends PaymentViewModel {
     //check that user is logged in to countinue else go to login page
     if (!AuthServices.authenticated()) {
       final result =
-          await viewContext.navigator.pushNamed(AppRoutes.loginRoute);
+          await Navigator.of(viewContext).push(MaterialPageRoute(builder: (context) => LoginPage(),));
       paymentOptionRequest = PaymentMethodRequest();
       if (result == null || !result) {
         return;
@@ -282,7 +283,7 @@ class NewParcelViewModel extends PaymentViewModel {
     //check that user is logged in to countinue else go to login page
     if (!AuthServices.authenticated()) {
       final result =
-          await viewContext.navigator.pushNamed(AppRoutes.loginRoute);
+          await Navigator.of(viewContext).push(MaterialPageRoute(builder: (context) => LoginPage(),));
       paymentOptionRequest = PaymentMethodRequest();
       if (result == null || !result) {
         return;
@@ -307,7 +308,7 @@ class NewParcelViewModel extends PaymentViewModel {
     //check that user is logged in to countinue else go to login page
     if (!AuthServices.authenticated()) {
       final result =
-          await viewContext.navigator.pushNamed(AppRoutes.loginRoute);
+          await Navigator.of(viewContext).push(MaterialPageRoute(builder: (context) => LoginPage(),));
       paymentOptionRequest = PaymentMethodRequest();
       if (result == null || !result) {
         return;

@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:fuodz/constants/app_strings.dart';
@@ -13,6 +15,7 @@ class VendorTypeListItem extends StatelessWidget {
   final Function onPressed;
   @override
   Widget build(BuildContext context) {
+    log('Building ');
     return AnimationConfiguration.staggeredList(
       position: vendorType.id,
       duration: const Duration(milliseconds: 375),

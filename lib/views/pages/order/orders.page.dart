@@ -97,7 +97,8 @@ class _OrdersPageState extends State<OrdersPage>
                             orderPressed: () => vm.openOrderDetails(order),
                           );
                         },
-                        separatorBuilder: (context,index) => UiSpacer.verticalSpace(space: 2),
+                        separatorBuilder: (context, index) =>
+                            UiSpacer.verticalSpace(space: 2),
                       ).expand()
                     : EmptyState(
                         auth: true,

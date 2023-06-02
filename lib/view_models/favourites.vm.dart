@@ -81,5 +81,8 @@ class FavouritesViewModel extends MyBaseViewModel {
       AppRoutes.product,
       arguments: product,
     );
+    //  Navigator.of(viewContext).push(MaterialPageRoute(
+    //   builder: (context) => ProductDetailsPage(product: product),
+    // ));
   }
 }

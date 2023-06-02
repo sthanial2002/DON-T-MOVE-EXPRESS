@@ -83,7 +83,8 @@ class VendorType {
         "formatted_date": formattedDate == null ? null : formattedDate,
         "logo": logo == null ? null : logo,
       };
-
+  @override
+  String toString() => toJson().toString();
   //
   bool get authRequired {
     return ["taxi", "parcel", "package"].contains(slug);

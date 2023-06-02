@@ -19,4 +19,11 @@
         <item name="android:windowBackground">@android:color/white</item>
         <item name="android:windowFullscreen">false</item>
     </style>
+
+    
+    <style name="Theme.RemoveSplashScreenTheme" parent="AppTheme" >
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:backgroundTint">@android:color/white</item>
+<!--        <item name="android:windowBackground">@drawable/ic_logo</item>-->
+    </style>
 </resources>

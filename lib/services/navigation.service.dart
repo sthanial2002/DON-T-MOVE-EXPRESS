@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:fuodz/models/product.dart';
 import 'package:fuodz/models/search.dart';
@@ -45,6 +47,7 @@ class NavigationService {
 
   static Widget vendorTypePage(VendorType vendorType, {BuildContext context}) {
     Widget homeView = VendorPage(vendorType);
+    log("yiyiyiyiy ${vendorType}");
     switch (vendorType.slug) {
       case "parcel":
         homeView = ParcelPage(vendorType);

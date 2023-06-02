@@ -7,6 +7,8 @@ import 'package:fuodz/constants/app_routes.dart';
 import 'package:fuodz/models/search.dart';
 import 'package:velocity_x/velocity_x.dart';
 
+import '../../views/pages/search/search.page.dart';
+
 class BannersViewModel extends MyBaseViewModel {
   BannersViewModel(
     BuildContext context,
@@ -51,10 +53,10 @@ class BannersViewModel extends MyBaseViewModel {
         arguments: banner.vendor,
       );
     } else {
-      viewContext.navigator.pushNamed(
-        AppRoutes.search,
-        arguments: Search(category: banner.category),
-      );
+      Navigator.of(viewContext).push(MaterialPageRoute(
+        builder: (context) =>
+            SearchPage(search: Search(category: banner.category)),
+      ));
     }
   }
 }

@@ -281,6 +281,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.2.1"
+  curved_nav_bar:
+    dependency: "direct main"
+    description:
+      name: curved_nav_bar
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.2"
   custom_clippers:
     dependency: "direct main"
     description:
@@ -1170,7 +1177,7 @@ packages:
     source: hosted
     version: "1.0.2"
   lottie:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: lottie
       url: "https://pub.dartlang.org"
@@ -1379,6 +1386,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.11.1"
+  persistent_bottom_nav_bar_v2:
+    dependency: "direct main"
+    description:
+      name: persistent_bottom_nav_bar_v2
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.2.8"
   petitparser:
     dependency: transitive
     description:

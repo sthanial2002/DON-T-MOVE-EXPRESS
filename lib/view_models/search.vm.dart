@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:fuodz/constants/app_routes.dart';
 import 'package:fuodz/models/category.dart';
@@ -48,7 +50,7 @@ class SearchViewModel extends MyBaseViewModel {
     } else {
       queryPage = queryPage + 1;
     }
-
+    log("initialLoaoding ${initialLoaoding}");
     //
     try {
       final searchResult = await _searchRequest.searchRequest(
@@ -56,13 +58,16 @@ class SearchViewModel extends MyBaseViewModel {
         search: search,
         page: queryPage,
       );
+      log("searchResult==> ${searchResult}");
       clearErrors();
-
+      log("sucsses");
       //
       if (initialLoaoding) {
         searchResults = searchResult;
+        log("searchResults ${searchResults}");
       } else {
         searchResults.addAll(searchResult);
+        log("fuls");
       }
     } catch (error) {
       print("Error ==> $error");

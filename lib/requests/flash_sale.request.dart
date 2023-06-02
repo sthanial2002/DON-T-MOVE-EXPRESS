@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'package:fuodz/constants/api.dart';
 import 'package:fuodz/models/api_response.dart';
 import 'package:fuodz/models/flash_sale.dart';
@@ -18,10 +19,14 @@ class FlashSaleRequest extends HttpService {
     );
 
     final apiResponse = ApiResponse.fromResponse(apiResult);
+    log("123getFlashSales ${apiResponse.body}");
+    log("123getFlashSales ${apiResponse.body}");
     if (apiResponse.allGood) {
-      return (apiResponse.body as List)
+      final data = (apiResponse.body as List)
           .map((jsonObject) => FlashSale.fromJson(jsonObject))
           .toList();
+      log("data in flashlist=====> $data");
+      return data;
     }
 
     throw apiResponse.message;
@@ -41,14 +46,41 @@ class FlashSaleRequest extends HttpService {
       Api.flashSales,
       queryParameters: params,
     );
-
+    /*
+    please check at backend side, I am not getting any response from the backend.
+    I am sending the apk to you after checking at my side.
+    */
+    log("apiResult ${apiResult.data}");
     final apiResponse = ApiResponse.fromResponse(apiResult);
+    log("123getProdcuts ${apiResponse.body}");
+    log("123getProdcuts ${apiResponse.body.runtimeType}");
+    productApi();
     if (apiResponse.allGood) {
-      return apiResponse.data
-          .map((jsonObject) => Product.fromJson(jsonObject["item"]))
-          .toList();
+      List<Product> prdList = [];
+      for (var jsonObject in apiResponse.body) {
+        prdList.add(Product.fromJson(jsonObject["item"]));
+      }
+      // final list = apiResponse.body.map((jsonObject) {
+      //   log("========?>  ${jsonObject["item"]}");
+      //   return Product.fromJson(jsonObject["item"]);
+      // }).toList();
+      log("========??>  ${prdList.first.availableQty}");
+      return prdList;
     }
-
+    log("========??>  ERRROR");
     throw apiResponse.message;
+  }
+
+  Future<List<Product>> productApi() async {
+    final response = await get(Api.flashSales);
+    log('productApi ${response.statusCode}');
+    log('123productApi ${response.data}');
+
+    if (response.statusCode == 200) {
+      List result = (response.data);
+      return result.map((e) => Product.fromJson(e)).toList();
+    } else {
+      throw Exception();
+    }
   }
 }

@@ -245,6 +245,8 @@ class LoginViewModel extends MyBaseViewModel with QrcodeScannerTrait {
         password: passwordTEC.text,
       );
 
+      log('Login=== ${apiResponse.body}');
+
       //
       await handleDeviceLogin(apiResponse);
 

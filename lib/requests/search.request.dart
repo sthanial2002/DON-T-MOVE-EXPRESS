@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:fuodz/constants/api.dart';
 import 'package:fuodz/models/api_response.dart';
 import 'package:fuodz/models/search.dart';
@@ -31,6 +33,7 @@ class SearchRequest extends HttpService {
         "vendor_type_id": vendorTypeId,
       },
     );
+    log("vendorTypeId ${vendorTypeId}");
     // print("result ==> $apiResult::$vendorTypeId");
     final apiResponse = ApiResponse.fromResponse(apiResult);
     if (apiResponse.allGood) {
@@ -53,8 +56,7 @@ class SearchRequest extends HttpService {
       "category_id": (search.subcategory == null && search.category != null)
           ? search.category.id
           : null,
-      "subcategory_id":
-          search.subcategory != null ? search.subcategory.id : '',
+      "subcategory_id": search.subcategory != null ? search.subcategory.id : '',
       "vendor_type_id": search.vendorType != null ? search.vendorType.id : "",
       "vendor_id": search.vendorId != null ? search.vendorId : "",
       "type": search.type,
@@ -77,18 +79,24 @@ class SearchRequest extends HttpService {
     final apiResult = await get(Api.search, queryParameters: params);
     final apiResponse = ApiResponse.fromResponse(apiResult);
     if (apiResponse.allGood) {
+      log("apiResponse ${apiResult}");
       //
       List<dynamic> result = [];
+      log("result---> ${apiResponse.body}");
       //
       result = (apiResponse.data).map(
         (jsonObject) {
           dynamic model;
+          log("model1 ${model}");
           if (search.type == 'product') {
             model = Product.fromJson(jsonObject);
+            log("model2 ${model}");
           } else if (search.type == "vendor") {
             model = Vendor.fromJson(jsonObject);
+            log("model3 ${model}");
           } else if (search.type == "service") {
             model = Service.fromJson(jsonObject);
+            log("model4 ${model}");
           } else {
             model = Product.fromJson(jsonObject);
           }
@@ -97,7 +105,7 @@ class SearchRequest extends HttpService {
       ).toList();
       return result;
     }
-
+    log("apiResponse.message ${apiResponse.message}");
     throw apiResponse.message;
   }
 }

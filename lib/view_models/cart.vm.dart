@@ -9,9 +9,12 @@ import 'package:fuodz/services/alert.service.dart';
 import 'package:fuodz/services/auth.service.dart';
 import 'package:fuodz/services/cart.service.dart';
 import 'package:fuodz/view_models/base.view_model.dart';
+import 'package:fuodz/views/pages/auth/login.page.dart';
 import 'package:fuodz/views/pages/checkout/multiple_order_checkout.page.dart';
 import 'package:localize_and_translate/localize_and_translate.dart';
 import 'package:velocity_x/velocity_x.dart';
+
+import '../views/pages/checkout/checkout.page.dart';
 
 class CartViewModel extends MyBaseViewModel {
   //
@@ -157,9 +160,8 @@ class CartViewModel extends MyBaseViewModel {
     bool canOpenCheckout = true;
     if (!AuthServices.authenticated()) {
       //
-      final result = await viewContext.navigator.pushNamed(
-        AppRoutes.loginRoute,
-      );
+      final result = await Navigator.of(viewContext)
+          .push(MaterialPageRoute(builder: ((context) => LoginPage())));
       if (result == null || !result) {
         canOpenCheckout = false;
       }
@@ -184,9 +186,9 @@ class CartViewModel extends MyBaseViewModel {
           (ctx) => MultipleOrderCheckoutPage(checkout: checkOut),
         );
       } else {
-        result = await viewContext.navigator.pushNamed(
-          AppRoutes.checkoutRoute,
-          arguments: checkOut,
+        result = await Navigator.of(viewContext).push(
+         MaterialPageRoute(builder: (context) => CheckoutPage(checkout: checkOut),)
+        
         );
       }
 

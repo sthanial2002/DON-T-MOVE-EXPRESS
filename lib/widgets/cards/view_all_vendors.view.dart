@@ -10,6 +10,8 @@ import 'package:fuodz/widgets/cards/custom.visibility.dart';
 import 'package:localize_and_translate/localize_and_translate.dart';
 import 'package:velocity_x/velocity_x.dart';
 
+import '../../views/pages/search/search.page.dart';
+
 class ViewAllVendorsView extends StatelessWidget {
   const ViewAllVendorsView({
     Key key,
@@ -36,14 +38,22 @@ class ViewAllVendorsView extends StatelessWidget {
               .p8()
               .onInkTap(() {
                 //open search with vendor type
-                Navigator.pushNamed(
-                  context,
-                  AppRoutes.search,
-                  arguments: Search(
-                    vendorType: vendorType,
-                    showType: vendorType.isService ? 5 : 4,
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => SearchPage(
+                    search: Search(
+                      vendorType: vendorType,
+                      showType: vendorType.isService ? 5 : 4,
+                    ),
                   ),
-                );
+                ));
+                // Navigator.pushNamed(
+                //   context,
+                //   AppRoutes.search,
+                //   arguments: Search(
+                //     vendorType: vendorType,
+                //     showType: vendorType.isService ? 5 : 4,
+                //   ),
+                // );
               })
               .box
               .rounded
@@ -74,12 +84,15 @@ class ViewAllVendorsView extends StatelessWidget {
               .p8()
               .onInkTap(() {
                 //open search with vendor type
-                Navigator.pushNamed(
+                Navigator.push(
                   context,
-                  AppRoutes.search,
-                  arguments: Search(
-                    vendorType: vendorType,
-                    showType: vendorType.isService ? 3 : 2,
+                  MaterialPageRoute(
+                    builder: (context) => SearchPage(
+                      search: Search(
+                        vendorType: vendorType,
+                        showType: vendorType.isService ? 3 : 2,
+                      ),
+                    ),
                   ),
                 );
               })

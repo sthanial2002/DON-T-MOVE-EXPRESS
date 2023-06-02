@@ -14,6 +14,7 @@ import 'package:fuodz/services/firebase.service.dart';
 import 'package:fuodz/widgets/cards/language_selector.view.dart';
 import 'package:jiffy/jiffy.dart';
 import 'package:localize_and_translate/localize_and_translate.dart';
+import '../views/pages/splash.page.dart';
 import 'base.view_model.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -34,6 +35,12 @@ class SplashViewModel extends MyBaseViewModel {
     }
   }
 
+  navigateToSecondSplash(BuildContext context) async {
+    Future.delayed(
+        const Duration(seconds: 3),
+        () => Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (context) => SplashPage())));
+  }
   //
 
   //

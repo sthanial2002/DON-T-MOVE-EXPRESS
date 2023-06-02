@@ -1,10 +1,14 @@
+import 'dart:developer';
 import 'dart:io';
 
 import 'package:cool_alert/cool_alert.dart';
 import 'package:flutter/material.dart';
 import 'package:fuodz/extensions/dynamic.dart';
 import 'package:fuodz/view_models/payment.view_model.dart';
+import 'package:fuodz/views/pages/auth/login.page.dart';
+
 import 'package:fuodz/views/pages/profile/account_delete.page.dart';
+import 'package:fuodz/views/pages/profile/edit_profile.page.dart';
 import 'package:fuodz/views/pages/splash.page.dart';
 import 'package:fuodz/constants/api.dart';
 import 'package:fuodz/constants/app_routes.dart';
@@ -19,6 +23,8 @@ import 'package:package_info/package_info.dart';
 import 'package:in_app_review/in_app_review.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'package:share/share.dart';
+
+import '../views/pages/notification/notifications.page.dart';
 
 class ProfileViewModel extends PaymentViewModel {
   //
@@ -51,8 +57,8 @@ class ProfileViewModel extends PaymentViewModel {
    */
 
   openEditProfile() async {
-    final result = await viewContext.navigator.pushNamed(
-      AppRoutes.editProfileRoute,
+    final result = await Navigator.of(viewContext).push(
+      MaterialPageRoute(builder: (context) => EditProfilePage()),
     );
 
     if (result != null && result) {
@@ -65,7 +71,7 @@ class ProfileViewModel extends PaymentViewModel {
    */
 
   openChangePassword() async {
-    viewContext.navigator.pushNamed(
+    Navigator.of(viewContext).pushNamed(
       AppRoutes.changePasswordRoute,
     );
   }
@@ -82,7 +88,7 @@ class ProfileViewModel extends PaymentViewModel {
 
   //
   openWallet() {
-    viewContext.navigator.pushNamed(
+    Navigator.of(viewContext).pushNamed(
       AppRoutes.walletRoute,
     );
   }
@@ -91,14 +97,14 @@ class ProfileViewModel extends PaymentViewModel {
    * Delivery addresses
    */
   openDeliveryAddresses() {
-    viewContext.navigator.pushNamed(
+    Navigator.of(viewContext).pushNamed(
       AppRoutes.deliveryAddressesRoute,
     );
   }
 
   //
   openFavourites() {
-    viewContext.navigator.pushNamed(
+    Navigator.of(viewContext).pushNamed(
       AppRoutes.favouritesRoute,
     );
   }
@@ -146,7 +152,7 @@ class ProfileViewModel extends PaymentViewModel {
     } else {
       //
       await AuthServices.logout();
-      viewContext.navigator.pushAndRemoveUntil(
+      Navigator.of(viewContext).pushAndRemoveUntil(
         MaterialPageRoute(builder: (context) => SplashPage()),
         (route) => false,
       );
@@ -154,9 +160,10 @@ class ProfileViewModel extends PaymentViewModel {
   }
 
   openNotification() async {
-    viewContext.navigator.pushNamed(
-      AppRoutes.notificationsRoute,
-    );
+    log("opening notification ${AppRoutes.notificationsRoute}");
+    Navigator.of(viewContext).push(MaterialPageRoute(
+      builder: (context) => NotificationsPage(),
+    ));
   }
 
   /**
@@ -206,10 +213,13 @@ class ProfileViewModel extends PaymentViewModel {
   }
 
   openLogin() async {
-    await viewContext.navigator.pushNamed(
-      AppRoutes.loginRoute,
-    );
+    // await Navigator.of(viewContext).pushNamed(
+    // AppRoutes.loginRoute,
+    // );
+    await Navigator.of(viewContext)
+        .push(MaterialPageRoute(builder: (context) => LoginPage()));
     //
+    notifyListeners();
     initialise();
   }
 

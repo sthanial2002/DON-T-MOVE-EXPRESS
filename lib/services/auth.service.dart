@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 
 import 'package:fuodz/constants/app_strings.dart';
 import 'package:fuodz/models/user.dart';
@@ -59,6 +60,12 @@ class AuthServices {
     );
   }
 
+  static Stream<bool> listenToProfileState() {
+    return LocalStorageService.rxPrefs.observe(
+      'editPR',
+      (p0) => p0,
+    );
+  }
   //
   //
   static User currentUser;
@@ -68,34 +75,39 @@ class AuthServices {
           await LocalStorageService.prefs.getString(AppStrings.userKey);
       final userObject = json.decode(userStringObject);
       currentUser = User.fromJson(userObject);
+      log("timmmmmm ${currentUser.walletAddress}");
     }
     return currentUser;
+    
   }
 
   ///
   ///
   ///
   static Future<User> saveUser(dynamic jsonObject) async {
-    final currentUser = User.fromJson(jsonObject);
+    final currentUser1 = User.fromJson(jsonObject);
+
     try {
       await LocalStorageService.prefs.setString(
         AppStrings.userKey,
         json.encode(
-          currentUser.toJson(),
+          currentUser1.toJson(),
         ),
       );
-
+      currentUser = currentUser1;
       //subscribe to firebase topic
       FirebaseService().firebaseMessaging.subscribeToTopic("all");
-      FirebaseService().firebaseMessaging.subscribeToTopic("${currentUser.id}");
       FirebaseService()
           .firebaseMessaging
-          .subscribeToTopic("${currentUser.role}");
+          .subscribeToTopic("${currentUser1.id}");
+      FirebaseService()
+          .firebaseMessaging
+          .subscribeToTopic("${currentUser1.role}");
 
       //log the new
       await SplashViewModel(null).loadAppSettings();
 
-      return currentUser;
+      return currentUser1;
     } catch (error) {
       return null;
     }

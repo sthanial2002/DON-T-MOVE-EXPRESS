@@ -6,7 +6,7 @@ class BannerListItem extends StatelessWidget {
   const BannerListItem({
     this.imageUrl,
     this.onPressed,
-    this.radius = 4,
+    this.radius = 15,
     this.noMargin = false,
     Key key,
   }) : super(key: key);
@@ -26,7 +26,9 @@ class BannerListItem extends StatelessWidget {
         .withRounded(value: radius)
         .clip(Clip.antiAlias)
         .margin(
-          EdgeInsets.symmetric(horizontal: noMargin ? 0.00 : 5.0),
+          EdgeInsets.symmetric(
+            horizontal: noMargin ? 0.00 : 5.0,
+          ),
         )
         .make();
   }

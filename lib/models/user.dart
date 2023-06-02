@@ -49,4 +49,7 @@ class User {
       'wallet_address': walletAddress,
     };
   }
+
+  @override
+  String toString() => toJson().toString();
 }

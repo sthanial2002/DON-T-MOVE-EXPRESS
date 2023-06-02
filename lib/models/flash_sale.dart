@@ -26,9 +26,9 @@ class FlashSale {
   List<Product> items;
 
   factory FlashSale.fromJson(Map<String, dynamic> json) => FlashSale(
-        id: json["id"],
-        name: json["name"],
-        vendorTypeId: json["vendor_type_id"],
+        id: json["id"] ?? '',
+        name: json["name"] ?? '',
+        vendorTypeId: json["vendor_type_id"] ?? '',
         expiresAt: DateTime.parse(json["expires_at"]),
       );
 
@@ -46,4 +46,7 @@ class FlashSale {
   bool get isExpired {
     return expiresAt.difference(DateTime.now()).inSeconds <= 0;
   }
+
+  @override
+  String toString() => "${toJson()} items: $items";
 }

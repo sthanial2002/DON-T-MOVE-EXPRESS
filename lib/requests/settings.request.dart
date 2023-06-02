@@ -1,7 +1,12 @@
+import 'dart:convert';
+import 'dart:developer';
+
 import 'package:dio/dio.dart';
 import 'package:fuodz/constants/api.dart';
 import 'package:fuodz/models/api_response.dart';
+import 'package:fuodz/models/onboard_model.dart';
 import 'package:fuodz/services/http.service.dart';
+import 'package:http/http.dart' as http;
 import 'package:localize_and_translate/localize_and_translate.dart';
 
 class SettingsRequest extends HttpService {
@@ -37,6 +42,19 @@ class SettingsRequest extends HttpService {
       throw error;
     } catch (error) {
       throw error;
+    }
+  }
+
+  Future<List<OnboardingModel>> onboardApi() async {
+    final response = await get(Api.appOnboardings);
+    log('message11111 ${response.statusCode}');
+    log('message====== ${response.data}');
+
+    if (response.statusCode == 200) {
+      List result = (response.data);
+      return result.map((e) => OnboardingModel.fromJson(e)).toList();
+    } else {
+      throw Exception();
     }
   }
 }

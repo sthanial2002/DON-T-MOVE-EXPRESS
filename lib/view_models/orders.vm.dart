@@ -10,6 +10,8 @@ import 'package:fuodz/views/pages/order/taxi_order_details.page.dart';
 import 'package:pull_to_refresh_flutter3/pull_to_refresh_flutter3.dart';
 import 'package:velocity_x/velocity_x.dart';
 
+import '../views/pages/auth/login.page.dart';
+
 class OrdersViewModel extends PaymentViewModel {
   //
   OrdersViewModel(BuildContext context) {
@@ -112,7 +114,10 @@ class OrdersViewModel extends PaymentViewModel {
   }
 
   void openLogin() async {
-    await viewContext.navigator.pushNamed(AppRoutes.loginRoute);
+    await Navigator.of(viewContext).push(MaterialPageRoute(
+      builder: (context) => LoginPage(),
+    ));
+    // await viewContext.navigator.push(route);
     notifyListeners();
     fetchMyOrders();
   }

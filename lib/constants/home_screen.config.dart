@@ -75,9 +75,9 @@ class HomeScreenConfig {
     if (uiEnv == null ||
         uiEnv["home"] == null ||
         uiEnv['home']["vendortypePerRow"] == null) {
-      return 2;
+      return 4;
     }
-    return (uiEnv['home']["vendortypePerRow"].toString().toInt()) ?? 2;
+    return (uiEnv['home']["vendortypePerRow"].toString().toInt()) ?? 4;
   }
 
   static bool get allowWalletTransfer {

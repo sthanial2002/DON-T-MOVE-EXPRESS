@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart' hide MenuItem;
 import 'package:fuodz/constants/app_strings.dart';
 import 'package:fuodz/extensions/dynamic.dart';
@@ -29,89 +31,93 @@ class _ProfilePageState extends State<ProfilePage>
         onModelReady: (model) => model.initialise(),
         disposeViewModel: false,
         builder: (context, model, child) {
+          log("aaaaaaa--> ${model}");
           return BasePage(
-            body: VStack(
-              [
-                //
-                "Settings".tr().text.xl2.semiBold.make(),
-                "Profile & App Settings".tr().text.lg.light.make(),
+            body: Padding(
+              padding: EdgeInsets.only(top: 20),
+              child: VStack(
+                [
+                  //
+                  "Settings".tr().text.xl2.semiBold.make(),
+                  "Profile & App Settings".tr().text.lg.light.make(),
 
-                //profile card
-                ProfileCard(model).py12(),
+                  //profile card
+                  ProfileCard(model).py12(),
 
-                //menu
-                VStack(
-                  [
-                    //
-                    MenuItem(
-                      title: "Notifications".tr(),
-                      onPressed: model.openNotification,
-                      ic: AppIcons.bell,
-                    ),
+                  //menu
+                  VStack(
+                    [
+                      //
+                      MenuItem(
+                        title: "Notifications".tr(),
+                        onPressed: model.openNotification,
+                        ic: AppIcons.bell,
+                      ),
 
-                    //
-                    MenuItem(
-                      title: "Rate & Review".tr(),
-                      onPressed: model.openReviewApp,
-                      ic: AppIcons.rating,
-                    ),
+                      //
+                      MenuItem(
+                        title: "Rate & Review".tr(),
+                        onPressed: model.openReviewApp,
+                        ic: AppIcons.rating,
+                      ),
 
-                    //
-                    MenuItem(
-                      title: "Privacy Policy".tr(),
-                      onPressed: model.openPrivacyPolicy,
-                      ic: AppIcons.compliant,
-                    ),
-                    //
-                    MenuItem(
-                      title: "Terms & Conditions".tr(),
-                      onPressed: model.openTerms,
-                      ic: AppIcons.termsAndConditions,
-                    ),
-                    //
-                    MenuItem(
-                      title: "Contact Us".tr(),
-                      onPressed: model.openContactUs,
-                      ic: AppIcons.communicate,
-                    ),
-                    //
-                    MenuItem(
-                      title: "Live Support".tr(),
-                      onPressed: model.openLivesupport,
-                      ic: AppIcons.livesupport,
-                    ),
-                    //
-                    MenuItem(
-                      title: "Language".tr(),
-                      divider: false,
-                      ic: AppIcons.translation,
-                      onPressed: model.changeLanguage,
-                    ),
+                      //
+                      MenuItem(
+                        title: "Privacy Policy".tr(),
+                        onPressed: model.openPrivacyPolicy,
+                        ic: AppIcons.compliant,
+                      ),
+                      //
+                      MenuItem(
+                        title: "Terms & Conditions".tr(),
+                        onPressed: model.openTerms,
+                        ic: AppIcons.termsAndConditions,
+                      ),
+                      //
+                      MenuItem(
+                        title: "Contact Us".tr(),
+                        onPressed: model.openContactUs,
+                        ic: AppIcons.communicate,
+                      ),
+                      //
+                      MenuItem(
+                        title: "Live Support".tr(),
+                        onPressed: model.openLivesupport,
+                        ic: AppIcons.livesupport,
+                      ),
+                      //
+                      MenuItem(
+                        title: "Language".tr(),
+                        divider: false,
+                        ic: AppIcons.translation,
+                        onPressed: model.changeLanguage,
+                      ),
 
-                    //
-                    MenuItem(
-                      title: "Version".tr(),
-                      suffix: model.appVersionInfo.text.make(),
-                    ),
-                  ],
-                ),
+                      //
+                      MenuItem(
+                        title: "Version".tr(),
+                        suffix: model.appVersionInfo.text.make(),
+                      ),
+                    ],
+                  ),
 
-                //
-                "Copyright ©%s %s all right reserved"
-                    .tr()
-                    .fill([
-                      "${DateTime.now().year}",
-                      AppStrings.companyName,
-                    ])
-                    .text
-                    .center
-                    .sm
-                    .makeCentered()
-                    .py20(),
-                //
-                UiSpacer.verticalSpace(space: context.percentHeight * 10),
-              ],
-            ).p20().scrollVertical(),
+                  //
+                  "Copyright ©%s %s all right reserved"
+                      .tr()
+                      .fill([
+                        "${DateTime.now().year}",
+                        AppStrings.companyName,
+                      ])
+                      .text
+                      .center
+                      .sm
+                      .makeCentered()
+                      .py20(),
+                  //
+                  UiSpacer.verticalSpace(space: context.percentHeight * 10),
+                ],
+              ).p20().scrollVertical(),
+            ),
           );
         },
       ),

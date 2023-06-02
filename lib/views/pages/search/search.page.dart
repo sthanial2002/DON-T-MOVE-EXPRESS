@@ -36,6 +36,7 @@ class SearchPage extends StatelessWidget {
         return BasePage(
           showCartView: showCancel,
           body: SafeArea(
+            minimum: EdgeInsets.only(top: 35),
             bottom: false,
             child: VStack(
               [
@@ -139,7 +140,7 @@ class SearchPage extends StatelessWidget {
                                   height: 80,
                                 );
                               } else {
-                                //regular views
+                                //regular views1
                                 return HorizontalProductListItem(
                                   searchResult,
                                   onPressed: model.productSelected,

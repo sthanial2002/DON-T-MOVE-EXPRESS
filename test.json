@@ -1,0 +1,29 @@
+{
+    "destination_addresses": [
+        "Kongens gate 5, 0153 Oslo, Norway"
+    ],
+    "origin_addresses": [
+        "8237+FFF",
+        "Abidjan",
+        "Côte d'Ivoire"
+    ],
+    "sdf":"data['rows'][0]['elements'][0]['duration']['text']",
+    "rows": [
+        {
+            "elements": [
+                {
+                    "distance": {
+                        "text": "5,580 mi",
+                        "value": 8980183
+                    },
+                    "duration": {
+                        "text": "4 days 12 hours",
+                        " value": 390341
+                    },
+                    "status": "OK"
+                }
+            ]
+        }
+    ],
+    "status": "OK"
+}

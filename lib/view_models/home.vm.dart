@@ -46,7 +46,7 @@ class HomeViewModel extends MyBaseViewModel {
     handleAppLink();
 
     //determine if homeview should be multiple vendor types or single vendor page
-    if (AppStrings.isSingleVendorMode) {
+   if (AppStrings.isSingleVendorMode) {
       VendorType vendorType = VendorType.fromJson(AppStrings.enabledVendorType);
       homeView = NavigationService.vendorTypePage(
         vendorType,

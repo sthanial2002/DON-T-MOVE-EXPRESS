@@ -5,7 +5,7 @@ class AppRoutes {
   static const changePasswordRoute = "change_password";
   static const registerRoute = "register";
   static const forgotPasswordRoute = "forgot_password";
-  static const homeRoute = "home";  
+  static const homeRoute = "home";
   static const notificationsRoute = "notificaitions";
   static const notificationDetailsRoute = "notificaition_details";
 
@@ -23,12 +23,11 @@ class AppRoutes {
   static const deliveryAddressesRoute = "delivery_addresses";
   static const newDeliveryAddressesRoute = "new_delivery_addresses";
   static const editDeliveryAddressesRoute = "edit_delivery_addresses";
-  
+
   //
   static const favouritesRoute = "favourites";
 
   //wallet
   static const walletRoute = "wallet";
   static const orderTrackingRoute = "order_tracking";
-  
 }
